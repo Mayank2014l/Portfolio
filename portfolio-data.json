@@ -1,0 +1,103 @@
+{
+  "featured_projects": [
+    {
+      "tag": "U1",
+      "title": "ResumeIQ — AI Resume Tracker",
+      "description": "A full-stack AI resume tracker with job matching, AI-generated cover letters, a payment gateway and an admin panel.",
+      "tech_stack": ["Next.js 14", "Prisma", "TypeScript", "Claude AI"],
+      "github_url": "https://github.com/Mayank2014l/ai-powered-resume-tracker",
+      "is_public_repo": true
+    },
+    {
+      "tag": "U2",
+      "title": "Smart AI Bulb Socket",
+      "description": "An IoT-based smart bulb socket built for automation and energy efficiency, with AI-driven usage patterns that auto-schedule lighting and cut energy consumption by ~20%.",
+      "tech_stack": ["IoT Sensors", "Arduino/ESP8266", "Python", "C++"],
+      "is_public_repo": false
+    },
+    {
+      "tag": "U3",
+      "title": "Shieldfied — Cybersecurity Platform",
+      "description": "A cybersecurity web app with a cyberpunk-themed, glassmorphism UI and threat-simulation features built to teach everyday users better digital hygiene.",
+      "tech_stack": ["React.js", "Node.js", "Express", "MongoDB"],
+      "is_public_repo": false
+    },
+    {
+      "tag": "U4",
+      "title": "BattleOP — Esports Platform",
+      "description": "A full-stack esports platform for tournament participation, with wallet management, Razorpay payments, real-time updates and an admin dashboard.",
+      "tech_stack": ["React.js", "Firebase", "Razorpay"],
+      "is_public_repo": false
+    },
+    {
+      "tag": "U5",
+      "title": "EcoStock — Smart Inventory System",
+      "description": "A smart inventory management platform with barcode scanning, live stock tracking, dashboard analytics and sensor-monitoring support.",
+      "tech_stack": ["React.js", "Node.js", "Express.js"],
+      "is_public_repo": false
+    },
+    {
+      "tag": "U6",
+      "title": "Campus ERP System",
+      "description": "A centralized academic management platform for students, faculty and admins — covering role-based auth, announcements, marks transparency and academic requests.",
+      "tech_stack": ["NestJS", "Prisma", "PostgreSQL"],
+      "is_public_repo": false
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Campus Ambassador Certificate",
+      "issuer": "My Job Grow",
+      "date": "Sep 2025",
+      "url": "https://www.linkedin.com/in/mayank-pradhan-2abb60322/details/certifications/"
+    },
+    {
+      "name": "GenAI Powered Data Analytics Job Simulation",
+      "issuer": "Tata Group",
+      "date": "Jul 2025",
+      "url": "https://drive.google.com/file/d/1MHvM8UTaaUkPiSn4bdaILujKY23d0rG4/view?usp=drive_link"
+    },
+    {
+      "name": "Advanced Data Analysis using Excel & Power BI",
+      "issuer": "LetsUpgrade",
+      "date": "Jul 2025",
+      "url": "https://www.linkedin.com/in/mayank-pradhan-2abb60322/details/certifications/"
+    },
+    {
+      "name": "Power BI Workshop",
+      "issuer": "Be10x",
+      "date": "Jul 2025",
+      "url": "https://www.linkedin.com/in/mayank-pradhan-2abb60322/details/certifications/"
+    },
+    {
+      "name": "Excel: From Beginner to Expert",
+      "issuer": "Analytics Vidhya",
+      "date": "Jul 2025",
+      "url": "https://www.linkedin.com/in/mayank-pradhan-2abb60322/details/certifications/"
+    },
+    {
+      "name": "HTML & CSS Bootcamp",
+      "issuer": "LetsUpgrade",
+      "date": "Jul 2025",
+      "url": "https://www.linkedin.com/in/mayank-pradhan-2abb60322/details/certifications/"
+    },
+    {
+      "name": "Introduction to Data Analytics",
+      "issuer": "Simplilearn",
+      "date": "Jun 2025",
+      "url": "https://drive.google.com/file/d/1H4s19iN0C9qrMjn64TseiGnyvKYbk4bC/view?usp=drive_link"
+    },
+    {
+      "name": "SQL (Intermediate)",
+      "issuer": "HackerRank",
+      "date": "Jun 2025",
+      "url": "https://www.hackerrank.com/certificates/iframe/959cb90f870e"
+    },
+    {
+      "name": "SQL (Basic)",
+      "issuer": "HackerRank",
+      "date": "Jun 2025",
+      "url": "https://www.hackerrank.com/certificates/iframe/2695124b5db0"
+    }
+  ]
+}
