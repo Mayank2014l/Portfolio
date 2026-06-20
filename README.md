@@ -3,7 +3,7 @@
 Welcome to the repository of my personal portfolio website! This project showcases my journey, skills, and projects as a B.Tech Computer Science (IoT) student, Full-Stack Web Developer, and Hardware Tinkerer.
 
 ## 🌐 Live Demo
-You can view the live site here: **[https://mayank2014l.github.io/Portfolio/](https://mayank2014l.github.io/Portfolio/)** *(or your custom domain)*
+You can view the live site here: **[https://mayankpradhan-portfolio.netlify.app](https://mayankpradhan-portfolio.netlify.app)**
 
 ---
 
