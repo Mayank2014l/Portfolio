@@ -1,43 +1,64 @@
 {
-  "featured_projects": [
+  "saas_applications": [
     {
-      "tag": "U1",
+      "tag": "SaaS 1",
       "title": "ResumeIQ — AI Resume Tracker",
-      "description": "A full-stack AI resume tracker with job matching, AI-generated cover letters, a payment gateway and an admin panel.",
-      "tech_stack": ["Next.js 14", "Prisma", "TypeScript", "Claude AI"],
+      "description": "A full-stack AI resume tracker with job matching, AI-generated cover letters, an ATS gap scanner, a payment gateway, and an admin panel.",
+      "tech_stack": ["Next.js 14", "Prisma", "TypeScript", "Claude AI", "Tailwind CSS"],
       "github_url": "https://github.com/Mayank2014l/ai-powered-resume-tracker",
+      "live_url": "https://resumeiq-app-610.netlify.app",
       "is_public_repo": true
     },
     {
-      "tag": "U2",
+      "tag": "SaaS 2",
+      "title": "BillFlow — Invoice & Billing SaaS",
+      "description": "A complete multi-tenant invoice builder with workspace switching, role-based access control (RBAC), automatic PDF generation, and Stripe subscription checkouts.",
+      "tech_stack": ["Next.js 15", "Prisma", "PostgreSQL", "Tailwind CSS v4", "Stripe", "Resend"],
+      "github_url": "https://github.com/Mayank2014l/billflow-invoice-billing-saas",
+      "live_url": "https://billflow-mayank2014l.netlify.app",
+      "is_public_repo": true
+    },
+    {
+      "tag": "SaaS 3",
+      "title": "BugFlow — In-App Bug Reporting SaaS",
+      "description": "A developer-first B2B bug tracker. Includes an embeddable JS widget for canvas annotations, console logs capturing, network details, and real-time triage dashboards.",
+      "tech_stack": ["Next.js 14", "Vanilla JS", "Supabase", "Prisma", "PostgreSQL", "Slack API"],
+      "github_url": "https://github.com/Mayank2014l/bugflow-platform",
+      "live_url": "https://bugflow-triage-mp.netlify.app",
+      "is_public_repo": true
+    }
+  ],
+  "featured_projects": [
+    {
+      "tag": "U1",
       "title": "Smart AI Bulb Socket",
       "description": "An IoT-based smart bulb socket built for automation and energy efficiency, with AI-driven usage patterns that auto-schedule lighting and cut energy consumption by ~20%.",
       "tech_stack": ["IoT Sensors", "Arduino/ESP8266", "Python", "C++"],
       "is_public_repo": false
     },
     {
-      "tag": "U3",
+      "tag": "U2",
       "title": "Shieldfied — Cybersecurity Platform",
       "description": "A cybersecurity web app with a cyberpunk-themed, glassmorphism UI and threat-simulation features built to teach everyday users better digital hygiene.",
       "tech_stack": ["React.js", "Node.js", "Express", "MongoDB"],
       "is_public_repo": false
     },
     {
-      "tag": "U4",
+      "tag": "U3",
       "title": "BattleOP — Esports Platform",
       "description": "A full-stack esports platform for tournament participation, with wallet management, Razorpay payments, real-time updates and an admin dashboard.",
       "tech_stack": ["React.js", "Firebase", "Razorpay"],
       "is_public_repo": false
     },
     {
-      "tag": "U5",
+      "tag": "U4",
       "title": "EcoStock — Smart Inventory System",
       "description": "A smart inventory management platform with barcode scanning, live stock tracking, dashboard analytics and sensor-monitoring support.",
       "tech_stack": ["React.js", "Node.js", "Express.js"],
       "is_public_repo": false
     },
     {
-      "tag": "U6",
+      "tag": "U5",
       "title": "Campus ERP System",
       "description": "A centralized academic management platform for students, faculty and admins — covering role-based auth, announcements, marks transparency and academic requests.",
       "tech_stack": ["NestJS", "Prisma", "PostgreSQL"],

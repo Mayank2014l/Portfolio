@@ -267,6 +267,9 @@
 
   /* ---------- PROJECTS ---------- */
   .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .saas-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;}
+  @media (max-width:960px){ .saas-grid{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:680px){ .saas-grid{grid-template-columns:1fr;} }
   .proj-card{
     border:1px solid var(--line); border-radius:var(--radius);
     background:var(--panel); padding:26px;
@@ -561,12 +564,12 @@
         <span class="eyebrow">Build log</span>
         <h2 class="sec-title">Projects</h2>
       </div>
-      <div class="proj-grid" id="featured-main-container">
-        <!-- Main Featured Project (Loaded dynamically) -->
+      <div class="proj-subdivider">SaaS Applications</div>
+      <div class="saas-grid" id="saas-projects-container">
+        <!-- SaaS Applications (Loaded dynamically) -->
       </div>
 
-      <div class="proj-subdivider">More projects</div>
-
+      <div class="proj-subdivider">Other Projects</div>
       <div class="proj-grid" id="featured-grid-container">
         <!-- More Featured Projects (Loaded dynamically) -->
       </div>
@@ -708,40 +711,45 @@
   fetch('./portfolio-data.json')
     .then(response => response.json())
     .then(data => {
-      // 1. Render Featured Projects
-      const featuredMain = document.getElementById('featured-main-container');
-      const featuredGrid = document.getElementById('featured-grid-container');
-
-      if (data.featured_projects && data.featured_projects.length > 0) {
-        // Main project
-        const first = data.featured_projects[0];
-        featuredMain.innerHTML = `
+      // 1. Render SaaS Applications
+      const saasContainer = document.getElementById('saas-projects-container');
+      if (data.saas_applications && data.saas_applications.length > 0) {
+        saasContainer.innerHTML = data.saas_applications.map(proj => `
           <div class="proj-card reveal">
-            <div class="tag-row">
-              <span class="proj-tag">${first.tag}</span>
-              ${first.is_public_repo ? `
+            <div class="tag-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="proj-tag">${proj.tag}</span>
+              ${proj.is_public_repo ? `
                 <span class="verified-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   Public repo
                 </span>
               ` : ''}
             </div>
-            <h3>${first.title}</h3>
-            <p>${first.description}</p>
+            <h3>${proj.title}</h3>
+            <p>${proj.description}</p>
             <div class="proj-stack">
-              ${first.tech_stack.map(tech => `<span>${tech}</span>`).join('')}
+              ${proj.tech_stack.map(tech => `<span>${tech}</span>`).join('')}
             </div>
-            ${first.github_url ? `
-              <a href="${first.github_url}" target="_blank" class="proj-link">View repo
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
-            ` : ''}
+            <div style="display: flex; gap: 15px; margin-top: 14px; flex-wrap: wrap;">
+              ${proj.github_url ? `
+                <a href="${proj.github_url}" target="_blank" class="proj-link" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--mint); display: inline-flex; align-items: center; gap: 4px;">View repo
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              ` : ''}
+              ${proj.live_url ? `
+                <a href="${proj.live_url}" target="_blank" class="proj-link" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--copper); display: inline-flex; align-items: center; gap: 4px;">Live demo
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              ` : ''}
+            </div>
           </div>
-        `;
+        `).join('');
+      }
 
-        // Other projects
-        const remaining = data.featured_projects.slice(1);
-        featuredGrid.innerHTML = remaining.map(proj => `
+      // 2. Render Other Featured Projects
+      const featuredGrid = document.getElementById('featured-grid-container');
+      if (data.featured_projects && data.featured_projects.length > 0) {
+        featuredGrid.innerHTML = data.featured_projects.map(proj => `
           <div class="proj-card reveal">
             <div class="tag-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <span class="proj-tag">${proj.tag}</span>
@@ -766,7 +774,7 @@
         `).join('');
       }
 
-      // 2. Render Certifications
+      // 3. Render Certifications
       const certContainer = document.getElementById('certifications-container');
       if (data.certifications) {
         certContainer.innerHTML = data.certifications.map(cert => `
@@ -793,13 +801,14 @@
     })
     .catch(err => console.error('Error loading portfolio data:', err));
 
-  // 3. Fetch GitHub repositories dynamically
+  // 4. Fetch GitHub repositories dynamically (excluding portfolio and SaaS repos)
   fetch('https://api.github.com/users/Mayank2014l/repos?sort=updated&per_page=20')
     .then(response => response.json())
     .then(repos => {
       const githubContainer = document.getElementById('github-repos-container');
       if (Array.isArray(repos)) {
-        const filteredRepos = repos.filter(repo => repo.name.toLowerCase() !== 'portfolio');
+        const excluded = ['portfolio', 'bugflow-platform', 'billflow-invoice-billing-saas', 'ai-powered-resume-tracker'];
+        const filteredRepos = repos.filter(repo => !excluded.includes(repo.name.toLowerCase()));
         if (filteredRepos.length > 0) {
           githubContainer.innerHTML = filteredRepos.map(repo => `
             <a href="${repo.html_url}" target="_blank" title="${repo.description || ''}">${repo.name}</a>
